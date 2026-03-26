@@ -1,42 +1,99 @@
 body {
-  background: linear-gradient(135deg, #4facfe, #00f2fe);
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #a18cd1);
 }
 
-/* Caixa central para o conteúdo */
+
+/* FUNDO COM CORAÇÕES (funciona de verdade) */
+
+body {
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(255,0,100,0.3) 10px, transparent 11px),
+    radial-gradient(circle at 30% 70%, rgba(255,0,150,0.3) 15px, transparent 16px),
+    radial-gradient(circle at 70% 30%, rgba(255,0,120,0.3) 12px, transparent 13px),
+    radial-gradient(circle at 80% 80%, rgba(255,0,160,0.3) 18px, transparent 19px),
+    radial-gradient(circle at 50% 50%, rgba(255,0,130,0.3) 14px, transparent 15px),
+    linear-gradient(135deg, #ff9a9e, #fad0c4, #a18cd1);
+}
+
+
+/* CHUVA MAIS BONITA */
+
+.chuva {
+  position: fixed;
+  top: -50px;
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  animation: cair 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes cair {
+  0% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(110vh);
+  }
+}
+
+
+/* CAIXA */
+
 .container {
   max-width: 800px;
   margin: 80px auto;
-  background-color: white;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Título principal */
-h1 {
-  color: #2c3e50;
+  background: rgba(255,255,255,0.95);
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0px 10px 40px rgba(0,0,0,0.3);
   text-align: center;
-  font-size: 36px;
-  margin-bottom: 20px;
+  position: relative;
 }
 
-/* Parágrafos */
-p {
-  font-size: 20px;
-  color: #444;
-  line-height: 1.6;
-  text-align: center;
-}
 
-/* Detalhe decorativo tipo "quadro escolar" */
+/* faixa */
+
 .container::before {
-  content: "📚 Professora";
+  content: "💖 Melhor mãe e professora do mundo 📚";
   display: block;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+
+/* brilho */
+
+.container::after {
+  content: "✨ ✨ ✨ ✨ ✨";
+  position: absolute;
+  top: -25px;
+  width: 100%;
   text-align: center;
-  font-size: 18px;
-  color: #555;
-  margin-bottom: 10px;
+  animation: brilho 2s infinite alternate;
+}
+
+@keyframes brilho {
+  0% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+
+/* título */
+
+h1 {
+  color: #c2185b;
+  font-size: 40px;
+}
+
+
+/* texto */
+
+p {
+  font-size: 22px;
 }
